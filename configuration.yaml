@@ -77,5 +77,5 @@ group: !include groups.yaml
 automation: !include_dir_merge_list automation
 script: !include scripts.yaml
 
-# Switches
-switch: !include_dir_merge_list devices/switches
+# Switches 
+switch: !include_dir_merge_list devices/switch
