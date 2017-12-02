@@ -78,4 +78,10 @@ automation: !include_dir_merge_list automation
 script: !include scripts.yaml
 
 # Switches 
-switch: !include_dir_merge_list devices/switch
+switch: !include_dir_merge_list switch
+
+# Scripts
+script: !include_dir_merge_list script
+
+# Shell Commands
+shell_command: !include shell_command/shell_command.yaml
