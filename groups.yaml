@@ -1,0 +1,30 @@
+living_room:
+  name: Living Room
+  icon: mdi:sofa
+  entities:
+    - light.living_room_main_light
+    - light.living_room_lamp
+    - media_player.living_room_tv
+    - media_player.living_room_speaker
+hallway:
+  name: Hallway
+  icon: mdi:door
+  entities:
+    - light.doorway
+    - light.hallway
+studio:
+  name: Studio
+  icon: mdi:spotlight
+  entities:
+    - light.studio_main_light
+bedroom:
+  name: Bedroom
+  icon: mdi:sleep
+  entities:
+    - light.bedroom_main_light
+    - media_player.bedroom_tv
+kitchen:
+  name: Kitchen
+  icon: mdi:food-fork-drink
+  entities:
+    - media_player.kitchen_speaker

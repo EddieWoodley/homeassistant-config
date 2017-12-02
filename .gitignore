@@ -1,0 +1,13 @@
+*
+!*.yaml
+!automation
+!automation/*
+!devices
+!devices/*
+secrets.yaml
+known_devices.yaml
+.*
+!.gitignore
+!.travis.yml
+!travis
+!travis/*

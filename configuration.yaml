@@ -1,0 +1,81 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_lat
+  longitude: !secret home_lng
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 17
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/London
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  api_password: !secret http_password
+  trusted_networks:
+    - 192.168.1.0/24
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Weather prediction
+sensor:
+  - platform: yr
+
+# Text to speech
+tts:
+  - platform: google
+  
+# Device tracking with OwnTracks
+device_tracker:
+  - platform: gpslogger
+  - platform: nmap_tracker
+    hosts: 192.168.1.0/24
+    home_interval: 5
+    interval_seconds: 15
+    track_new_devices: no
+
+group: !include groups.yaml
+automation: !include_dir_merge_list automation
+script: !include scripts.yaml
+
+# Switches
+switch: !include_dir_merge_list devices/switches

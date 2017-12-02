@@ -1,0 +1,16 @@
+- alias: 'Turn off lights when everybody leaves the house'
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    to: 'not_home'
+  action:
+    service: light.turn_off
+    entity_id: group.all_lights
+- alias: 'Turn on lights when anyone enters the house'
+  trigger:
+    platform: state
+    entity_id: device_tracker.eddie
+    to: 'home'
+  action:
+    service: light.turn_on
+    entity_id: group.living_room, group.hallway
