@@ -4,6 +4,10 @@
 !automation/*
 !devices
 !devices/*
+!script
+!script/*
+!shell_command
+!shell_command/*
 secrets.yaml
 known_devices.yaml
 .*
