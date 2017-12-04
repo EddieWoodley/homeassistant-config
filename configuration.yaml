@@ -67,6 +67,7 @@ tts:
 # Device tracking with OwnTracks
 device_tracker:
   - platform: gpslogger
+    track_new_devices: no
   - platform: nmap_tracker
     hosts: 192.168.1.0/24
     home_interval: 5
