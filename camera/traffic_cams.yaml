@@ -1,0 +1,3 @@
+- platform: trafficengland
+  name: Bridge
+  camera_id: !secret bridge_camera_id
