@@ -1,7 +1,12 @@
 *
 !*.yaml
+!*.py
 !automation
 !automation/*
+!camera
+!camera/*
+!custom_components
+!custom_components/*
 !devices
 !devices/*
 !script
