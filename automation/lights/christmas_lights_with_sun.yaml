@@ -2,7 +2,7 @@
   trigger:
     platform: sun
     event: sunset
-    offset: "-01:00:00"
+    offset: "-00:10:00"
   action:
     service: switch.turn_on
     entity_id: switch.christmas_lights
