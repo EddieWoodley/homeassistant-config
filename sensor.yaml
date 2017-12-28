@@ -3,5 +3,8 @@
   sensors:
     dishwasher_power_consumption:
       friendly_name: 'Dishwasher Power Consumption'
-      value_template: '{{ states.switch.dishwasher.attributes["Current consumption"] | replace(" W", "") }}'
+      value_template: '{{ states.switch.dishwasher.attributes.current_consumption | replace(" W", "") }}'
       unit_of_measurement: 'W'
+    dishwasher_running:
+      friendly_name: 'Dishwasher Running'
+      value_template: '{{ states.sensor.dishwasher_power_consumption | float > 2.3 }}'
