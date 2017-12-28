@@ -70,6 +70,11 @@ device_tracker:
     interval_seconds: 15
     track_new_devices: no
 
+notify:
+  - name: pushbullet
+    platform: pushbullet
+    api_key: !secret pushbullet_api_key
+
 camera: !include_dir_merge_list camera
 group: !include groups.yaml
 automation: !include_dir_merge_list automation
