@@ -23,6 +23,7 @@ frontend:
 config:
 
 http:
+  base_url: !secret base_url
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   api_password: !secret http_password
@@ -56,10 +57,6 @@ map:
 # Track the sun
 sun:
 
-# Weather prediction
-sensor:
-  - platform: yr
-
 # Text to speech
 tts:
   - platform: google
@@ -74,9 +71,15 @@ device_tracker:
     interval_seconds: 15
     track_new_devices: no
 
+notify:
+  - name: pushbullet
+    platform: pushbullet
+    api_key: !secret pushbullet_api_key
+
 camera: !include_dir_merge_list camera
 group: !include groups.yaml
 automation: !include_dir_merge_list automation
 switch: !include_dir_merge_list switch
 script: !include_dir_merge_list script
-shell_command: !include shell_command/shell_command.yaml
+sensor: !include sensor.yaml
+shell_command: !include shell_command.yaml

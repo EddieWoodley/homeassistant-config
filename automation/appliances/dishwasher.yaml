@@ -1,0 +1,10 @@
+- alias: "Dishwasher Finished Notification"
+  trigger:
+    - platform: state
+      entity_id: sensor.dishwasher_running
+      from: 'True'
+      to: 'False'
+  action:
+    - service: notify.pushbullet
+      data_template:
+        message: "Dishwasher Finished"
