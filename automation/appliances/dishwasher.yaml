@@ -1,5 +1,4 @@
 - alias: "Dishwasher Finished Notification"
-  hide_entity: true
   trigger:
     - platform: state
       entity_id: sensor.dishwasher_running
