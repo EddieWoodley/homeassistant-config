@@ -7,4 +7,4 @@
       unit_of_measurement: 'W'
     dishwasher_running:
       friendly_name: 'Dishwasher Running'
-      value_template: '{{ states.sensor.dishwasher_power_consumption | float > 2.3 }}'
+      value_template: '{{ states("sensor.dishwasher_power_consumption") | float > 2.3 }}'
