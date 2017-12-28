@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    dishwasher_power_consumption:
+      friendly_name: 'Dishwasher Power Consumption'
+      value_template: '{{ states.switch.dishwasher.attributes["Current consumption"] | replace(" W", "") }}'
+      unit_of_measurement: 'W'

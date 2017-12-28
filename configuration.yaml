@@ -79,4 +79,5 @@ group: !include groups.yaml
 automation: !include_dir_merge_list automation
 switch: !include_dir_merge_list switch
 script: !include_dir_merge_list script
-shell_command: !include shell_command/shell_command.yaml
+sensor: !include sensor.yaml
+shell_command: !include shell_command.yaml

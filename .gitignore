@@ -11,8 +11,6 @@
 !devices/*
 !script
 !script/*
-!shell_command
-!shell_command/*
 !switch
 !switch/*
 secrets.yaml
