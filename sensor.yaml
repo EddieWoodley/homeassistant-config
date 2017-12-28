@@ -1,3 +1,4 @@
+- platform: yr
 - platform: template
   sensors:
     dishwasher_power_consumption:
