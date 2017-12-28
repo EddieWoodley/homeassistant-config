@@ -4,8 +4,6 @@
       entity_id: sensor.dishwasher_running
       from: 'True'
       to: 'False'
-      for:
-        minutes: 1
   action:
     - service: notify.pushbullet
       data_template:
