@@ -19,7 +19,6 @@ from homeassistant.components.camera import (
     PLATFORM_SCHEMA, Camera)
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers import config_validation as cv
-from homeassistant.util.async import run_coroutine_threadsafe
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -61,7 +60,7 @@ class TrafficEnglandCamera(Camera):
 
     def camera_image(self):
         """Return bytes of camera image."""
-        return run_coroutine_threadsafe(
+        return asyncio.run_coroutine_threadsafe(
                 self.async_camera_image(), self.hass.loop).result()
 
     @asyncio.coroutine
